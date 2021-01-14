@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion AndroidSdk.compile
+    buildToolsVersion AppConfig.buildToolsVersion
+
+    defaultConfig {
+        applicationId AppConfig.applicationId
+        minSdkVersion AndroidSdk.minSdk
+        targetSdkVersion AndroidSdk.compile
+        versionCode 1
+        versionName AppConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = AndroidSdk.jvmTarget
+    }
+}
+
+dependencies {
+    // Core
+    implementation(Libs.kotlinStdLib)
+    implementation(Libs.coreKtxLib)
+    implementation(Libs.appCompatLib)
+    implementation(Libs.multidexLib)
+    implementation(Libs.legacySupportLib)
+
+    // Layout
+    implementation(Libs.materialLib)
+    implementation(Libs.constraintLayout)
+
+    // Arch Components
+    implementation(Libs.lifecycleExtensionsLib)
+    implementation(Libs.lifecycleLiveDataLib)
+    implementation(Libs.lifecycleViewModelLib)
+    implementation(Libs.fragmentLib)
+    implementation(Libs.navUiLib)
+
+    // Koin
+    implementation(Libs.koinCoreLib)
+    implementation(Libs.koinCoreExtLib)
+    implementation(Libs.koinAndroidXExtLib)
+    implementation(Libs.koinScopeLib)
+    implementation(Libs.koinViewModelLib)
+
+    // Network
+    implementation(Libs.retrofitCoreLib)
+    implementation(Libs.retrofitCoroutinesLib)
+    implementation(Libs.retrofitGsonLib)
+    implementation(Libs.okHttpLib)
+    implementation(Libs.okHttpLoggingLib)
+
+    // Coroutines
+    implementation(Libs.coroutinesCoreLib)
+    implementation(Libs.coroutinesAndroidLib)
+
+    // Test
+    testImplementation TestLibs.junit4
+    androidTestImplementation TestLibs.junitExt
+    androidTestImplementation TestLibs.espressoCore
+}
