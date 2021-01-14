@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion AndroidSdk.compile
+    buildToolsVersion AppConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId "dev.jamile.superheroes"
-        minSdkVersion 23
-        targetSdkVersion 30
+        applicationId AppConfig.applicationId
+        minSdkVersion AndroidSdk.minSdk
+        targetSdkVersion AndroidSdk.compile
         versionCode 1
-        versionName "1.0"
+        versionName AppConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -28,18 +28,49 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = AndroidSdk.jvmTarget
     }
 }
 
 dependencies {
+    // Core
+    implementation(Libs.kotlinStdLib)
+    implementation(Libs.coreKtxLib)
+    implementation(Libs.appCompatLib)
+    implementation(Libs.multidexLib)
+    implementation(Libs.legacySupportLib)
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // Layout
+    implementation(Libs.materialLib)
+    implementation(Libs.constraintLayout)
+
+    // Arch Components
+    implementation(Libs.lifecycleExtensionsLib)
+    implementation(Libs.lifecycleLiveDataLib)
+    implementation(Libs.lifecycleViewModelLib)
+    implementation(Libs.fragmentLib)
+    implementation(Libs.navUiLib)
+
+    // Koin
+    implementation(Libs.koinCoreLib)
+    implementation(Libs.koinCoreExtLib)
+    implementation(Libs.koinAndroidXExtLib)
+    implementation(Libs.koinScopeLib)
+    implementation(Libs.koinViewModelLib)
+
+    // Network
+    implementation(Libs.retrofitCoreLib)
+    implementation(Libs.retrofitCoroutinesLib)
+    implementation(Libs.retrofitGsonLib)
+    implementation(Libs.okHttpLib)
+    implementation(Libs.okHttpLoggingLib)
+
+    // Coroutines
+    implementation(Libs.coroutinesCoreLib)
+    implementation(Libs.coroutinesAndroidLib)
+
+    // Test
+    testImplementation TestLibs.junit4
+    androidTestImplementation TestLibs.junitExt
+    androidTestImplementation TestLibs.espressoCore
 }
