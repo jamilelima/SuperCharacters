@@ -1,11 +1,26 @@
 package dev.jamile.superheroes
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.app.Application
+import android.content.Context
+import dev.jamile.superheroes.di.networkModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class SuperHeroesApp : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        setupApp(baseContext)
+    }
+
+    private fun setupApp(ctx: Context) {
+        startKoin {
+            androidContext(ctx)
+            modules(
+                listOf(
+                    networkModule,
+                )
+            )
+        }
     }
 }
