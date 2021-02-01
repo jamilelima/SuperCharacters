@@ -55,6 +55,7 @@ object Libs {
         const val retrofitCoroutinesVersion = "0.9.2"
         const val recyclerVersion = "1.1.0"
         const val timberVersion = "4.7.0"
+        const val pagingVersion = "3.0.0-alpha13"
     }
 
     const val annotationLib = "org.jetbrains:annotations:${Versions.annotationVersion}"
@@ -86,6 +87,7 @@ object Libs {
     const val retrofitCoroutinesLib = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutinesVersion}"
     const val retrofitGsonLib = "com.squareup.retrofit2:converter-gson:${Versions.retrofitBaseVersion}"
     const val timberLib = "com.jakewharton.timber:timber:${Versions.timberVersion}"
+    const val pagingLib = "androidx.paging:paging-runtime:${Versions.pagingVersion}"
 }
 
 object TestLibs {

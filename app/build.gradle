@@ -50,6 +50,7 @@ dependencies {
     implementation(Libs.lifecycleViewModelLib)
     implementation(Libs.fragmentLib)
     implementation(Libs.navUiLib)
+    implementation(Libs.pagingLib)
 
     // Koin
     implementation(Libs.koinCoreLib)
