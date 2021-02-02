@@ -1,7 +1,9 @@
 package dev.jamile.superheroes.di
 
+import com.google.gson.GsonBuilder
 import dev.jamile.superheroes.network.ApiService
 import dev.jamile.superheroes.network.RequestInterceptor
+import dev.jamile.superheroes.network.SuperHeroesPagingSource
 import dev.jamile.superheroes.utils.BASE_URL
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -17,4 +19,5 @@ val networkModule = module {
 
     }
     single { get<Retrofit>().create(ApiService::class.java) }
+    factory { SuperHeroesPagingSource(get(), get()) }
 }
