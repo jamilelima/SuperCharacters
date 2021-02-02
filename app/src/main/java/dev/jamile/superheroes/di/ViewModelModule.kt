@@ -8,6 +8,4 @@ import org.koin.dsl.module
 val viewModelModule = module {
     factory<DispatchersProvider> { MainDispatchersProvider }
     factory { HomeViewModel(get(), get()) }
-
-
 }
