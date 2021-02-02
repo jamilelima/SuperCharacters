@@ -36,7 +36,7 @@ object ClasspathDependencies {
 object Libs {
     object Versions {
         const val annotationVersion = "13.0"
-        const val appCompatVersion = "1.1.0"
+        const val appCompatVersion = "1.2.0"
         const val constraintLayout = "2.0.0-beta4"
         const val coreKtx = "1.3.2"
         const val coroutinesVersion = "1.3.4"
@@ -72,6 +72,7 @@ object Libs {
     const val koinScopeLib = "org.koin:koin-androidx-scope:${Versions.koinVersion}"
     const val koinViewModelLib = "org.koin:koin-androidx-viewmodel:${Versions.koinVersion}"
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlinVersion}"
+    const val kotlinLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
     const val legacySupportLib = "androidx.legacy:legacy-support-v13:${Versions.legacySupportVersion}"
     const val lifecycleExtensionsLib = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleVersion}"
     const val lifecycleLiveDataLib = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
