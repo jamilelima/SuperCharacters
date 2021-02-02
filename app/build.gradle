@@ -35,6 +35,7 @@ android {
 dependencies {
     // Core
     implementation(Libs.kotlinStdLib)
+    implementation(Libs.kotlinLib)
     implementation(Libs.coreKtxLib)
     implementation(Libs.appCompatLib)
     implementation(Libs.multidexLib)
@@ -50,6 +51,8 @@ dependencies {
     implementation(Libs.lifecycleViewModelLib)
     implementation(Libs.fragmentLib)
     implementation(Libs.navUiLib)
+    implementation(Libs.navFragmentLib)
+    implementation(Libs.pagingLib)
 
     // Koin
     implementation(Libs.koinCoreLib)
