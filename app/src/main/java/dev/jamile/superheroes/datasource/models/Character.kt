@@ -7,7 +7,7 @@ data class Character(
     val aliases: String,
     val deck: String,
     val offset: String,
-    val image: Pair<String, String>,
+    val image: Map<String, String>,
     val name: String,
     @SerializedName("real_name")
     val realName: String,
