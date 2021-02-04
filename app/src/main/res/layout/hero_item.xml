@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#121116"
+    android:elevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/heroImage"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/cap" />
+
+        <TextView
+            android:id="@+id/heroNameTextView"
+            style="@style/HeroName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@id/heroImage"
+            app:layout_constraintTop_toTopOf="@id/heroImage"
+            tools:fontFamily="@font/noto_sans_bold"
+            tools:text="Captain Marvel" />
+
+
+        <TextView
+            android:id="@+id/heroRealNameTextView"
+            style="@style/HeroRealName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toEndOf="@id/heroImage"
+            app:layout_constraintTop_toBottomOf="@id/heroNameTextView"
+            tools:fontFamily="@font/noto_sans_bold"
+            tools:text="Carol Danvers" />
+
+
+        <TextView
+            android:id="@+id/heroDescTextView"
+            style="@style/HeroDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:maxLines="3"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/heroImage"
+            app:layout_constraintTop_toBottomOf="@id/heroRealNameTextView"
+            tools:fontFamily="@font/noto_sans_bold"
+            tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been..." />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sendToHeroInfoBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="More info"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_arrow_forward"
+            app:iconGravity="textEnd"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heroDescTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

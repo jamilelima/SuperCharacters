@@ -2,6 +2,7 @@ package dev.jamile.superheroes.features.home
 
 import dev.jamile.superheroes.base.BaseViewModel
 import dev.jamile.superheroes.network.Result
+import dev.jamile.superheroes.repository.CharactersRepository
 import dev.jamile.superheroes.utils.coroutines.DispatchersProvider
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +15,7 @@ class HomeViewModel(
 ) : BaseViewModel(dispatchersProvider) {
 
     private val _homeStateFlow = MutableStateFlow<HomeViewState>(HomeViewState.Loading)
-    private val homeStateFlow = _homeStateFlow.asStateFlow()
+    val homeStateFlow = _homeStateFlow.asStateFlow()
 
     fun getSuperHeroes() {
         val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
@@ -22,7 +23,7 @@ class HomeViewModel(
         }
 
         scope.launch(dispatchersProvider.main + coroutineExceptionHandler) {
-            when (val response = repository.getHeroes(2)) {
+            when (val response = repository.getHeroes(10)) {
                 is Result.Success -> {
                     _homeStateFlow.emit(
                         HomeViewState.Success(response.data.results)
