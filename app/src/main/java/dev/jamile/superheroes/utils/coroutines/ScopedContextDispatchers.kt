@@ -1,6 +1,5 @@
 package dev.jamile.superheroes.utils.coroutines
 
-import dev.jamile.superheroes.utils.coroutines.DispatchersProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlin.coroutines.CoroutineContext
 

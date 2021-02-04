@@ -56,6 +56,7 @@ object Libs {
         const val recyclerVersion = "1.1.0"
         const val timberVersion = "4.7.0"
         const val pagingVersion = "3.0.0-alpha13"
+        const val glideVersion = "4.12.0"
     }
 
     const val annotationLib = "org.jetbrains:annotations:${Versions.annotationVersion}"
@@ -89,6 +90,7 @@ object Libs {
     const val retrofitGsonLib = "com.squareup.retrofit2:converter-gson:${Versions.retrofitBaseVersion}"
     const val timberLib = "com.jakewharton.timber:timber:${Versions.timberVersion}"
     const val pagingLib = "androidx.paging:paging-runtime:${Versions.pagingVersion}"
+    const val glideLib = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
 }
 
 object TestLibs {

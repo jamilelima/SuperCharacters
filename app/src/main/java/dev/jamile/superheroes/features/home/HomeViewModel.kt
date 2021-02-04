@@ -1,18 +1,46 @@
 package dev.jamile.superheroes.features.home
 
-import android.util.Log
 import dev.jamile.superheroes.base.BaseViewModel
+import dev.jamile.superheroes.network.Result
+import dev.jamile.superheroes.repository.CharactersRepository
 import dev.jamile.superheroes.utils.coroutines.DispatchersProvider
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val repository: CharactersRepository,
-    dispatchersProvider: DispatchersProvider
+    private val dispatchersProvider: DispatchersProvider
 ) : BaseViewModel(dispatchersProvider) {
 
-    fun teste() {
-        launchMain {
-            val response = repository.getHeroes(2)
-            Log.d("TAG", "teste: ${response}")
+    private val _homeStateFlow = MutableStateFlow<HomeViewState>(HomeViewState.Loading)
+    val homeStateFlow = _homeStateFlow.asStateFlow()
+
+    fun getSuperHeroes() {
+        val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
+            onError(exception)
+        }
+
+        scope.launch(dispatchersProvider.main + coroutineExceptionHandler) {
+            when (val response = repository.getHeroes(10)) {
+                is Result.Success -> {
+                    _homeStateFlow.emit(
+                        HomeViewState.Success(response.data.results)
+                    )
+                }
+                is Result.Failure -> {
+                    _homeStateFlow.emit(
+                        HomeViewState.NetworkError("")
+                    )
+                }
+            }
         }
     }
+
+    private fun onError(throwable: Throwable) {
+        _homeStateFlow.value = HomeViewState.NetworkError(throwable.localizedMessage)
+        // Setup error here
+    }
+
 }
