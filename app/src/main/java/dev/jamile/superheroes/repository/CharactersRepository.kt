@@ -1,4 +1,4 @@
-package dev.jamile.superheroes.features.home
+package dev.jamile.superheroes.repository
 
 import dev.jamile.superheroes.datasource.models.HeroesResponse
 import dev.jamile.superheroes.network.Result
