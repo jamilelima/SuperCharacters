@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="HeroName">
+    <style name="CharacterName">
         <item name="android:textSize">20sp</item>
         <item name="fontFamily">@font/noto_sans_bold</item>
         <item name="android:textColor">#FFF</item>
     </style>
 
-    <style name="HeroRealName">
+    <style name="CharacterRealName">
         <item name="android:textSize">12sp</item>
         <item name="fontFamily">@font/noto_sans_bold</item>
         <item name="android:textColor">#FFF</item>
     </style>
 
-    <style name="HeroDesc">
+    <style name="CharacterDesc">
         <item name="android:textSize">12sp</item>
         <item name="fontFamily">@font/noto_sans_bold</item>
         <item name="android:textColor">#FFF</item>

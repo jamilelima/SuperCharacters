@@ -1,1 +1,1 @@
-# superheroes
+# SuperCharacters App
