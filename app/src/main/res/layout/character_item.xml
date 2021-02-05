@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     android:backgroundTint="#121116"
-    android:elevation="10dp">
+    android:elevation="10dp"
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:padding="10dp"
+            android:padding="5dp"
             android:textAlignment="center"
             app:layout_constraintStart_toEndOf="@id/characterImage"
             app:layout_constraintTop_toTopOf="@id/characterImage"
@@ -43,10 +44,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:padding="10dp"
+            android:padding="5dp"
             app:layout_constraintStart_toEndOf="@id/characterImage"
             app:layout_constraintTop_toBottomOf="@id/characterNameTextView"
-            tools:fontFamily="@font/noto_sans_bold"
+            tools:fontFamily="@font/noto_sans"
             tools:text="Carol Danvers" />
 
 
@@ -57,13 +58,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:maxLines="3"
-            android:padding="10dp"
+            android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/characterImage"
             app:layout_constraintTop_toBottomOf="@id/characterRealNameTextView"
-            tools:fontFamily="@font/noto_sans_bold"
+            tools:fontFamily="@font/noto_sans"
             tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been..." />
-
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sendTocharacterInfoBtn"
@@ -71,14 +71,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="More info"
+            android:gravity="end"
             android:textColor="@color/white"
             app:icon="@drawable/ic_arrow_forward"
             app:iconGravity="textEnd"
             app:iconTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/characterDescTextView" />
+            app:layout_constraintTop_toBottomOf="@id/characterDescTextView"
+            app:rippleColor="@android:color/transparent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
