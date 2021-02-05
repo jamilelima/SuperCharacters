@@ -1,4 +1,4 @@
-package dev.jamile.superheroes.network
+package dev.jamile.supercharacters.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

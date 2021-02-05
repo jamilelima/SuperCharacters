@@ -1,11 +1,11 @@
-package dev.jamile.superheroes.repository
+package dev.jamile.supercharacters.repository
 
-import dev.jamile.superheroes.datasource.models.HeroesResponse
-import dev.jamile.superheroes.network.Result
-import dev.jamile.superheroes.network.ApiService
+import dev.jamile.supercharacters.datasource.models.CharactersResponse
+import dev.jamile.supercharacters.network.Result
+import dev.jamile.supercharacters.network.ApiService
 
 class CharactersRepositoryImpl(private val apiService: ApiService) : CharactersRepository {
-    override suspend fun getHeroes(limit: Int): Result<HeroesResponse> {
+    override suspend fun getCharacters(limit: Int): Result<CharactersResponse> {
         val response = apiService.getCharacters(limit)
         return if (response.isSuccessful) {
             Result.Success(response.body()!!)

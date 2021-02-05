@@ -1,4 +1,4 @@
-package dev.jamile.superheroes.base
+package dev.jamile.supercharacters.base
 
 import android.app.Activity
 import android.content.Context
@@ -6,7 +6,7 @@ import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import dev.jamile.superheroes.R
+import dev.jamile.supercharacters.R
 
 abstract class BaseFragment(@LayoutRes layoutRes: Int = 0) : Fragment(layoutRes) {
 

@@ -2,7 +2,7 @@ package dev.jamile.supercharacters.datasource.models
 
 import com.google.gson.annotations.SerializedName
 
-data class HeroesResponse(
+data class CharactersResponse(
     val error: String,
     val limit: Int,
     val offset: Int,

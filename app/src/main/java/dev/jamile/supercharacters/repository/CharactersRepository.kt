@@ -1,8 +1,8 @@
-package dev.jamile.superheroes.repository
+package dev.jamile.supercharacters.repository
 
-import dev.jamile.superheroes.datasource.models.HeroesResponse
-import dev.jamile.superheroes.network.Result
+import dev.jamile.supercharacters.datasource.models.CharactersResponse
+import dev.jamile.supercharacters.network.Result
 
 interface CharactersRepository {
-    suspend fun getHeroes(limit: Int): Result<HeroesResponse>
+    suspend fun getCharacters(limit: Int): Result<CharactersResponse>
 }

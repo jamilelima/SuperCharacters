@@ -1,4 +1,4 @@
-package dev.jamile.superheroes.features.home
+package dev.jamile.supercharacters.features.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import dev.jamile.superheroes.R
-import dev.jamile.superheroes.base.BaseFragment
-import dev.jamile.superheroes.databinding.FragmentHomeBinding
-import dev.jamile.superheroes.datasource.models.Character
-import dev.jamile.superheroes.features.home.HomeViewState.*
+import dev.jamile.supercharacters.R
+import dev.jamile.supercharacters.base.BaseFragment
+import dev.jamile.supercharacters.databinding.FragmentHomeBinding
+import dev.jamile.supercharacters.datasource.models.Character
+import dev.jamile.supercharacters.features.home.HomeViewState.*
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,7 +35,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
-        viewModel.getSuperHeroes()
+        viewModel.getSuperCharacters()
     }
 
     override fun onDestroyView() {

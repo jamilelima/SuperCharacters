@@ -1,6 +1,6 @@
-package dev.jamile.superheroes.features.home
+package dev.jamile.supercharacters.features.home
 
-import dev.jamile.superheroes.datasource.models.Character
+import dev.jamile.supercharacters.datasource.models.Character
 
 sealed class HomeViewState {
     data class NetworkError(val message: String?) : HomeViewState()

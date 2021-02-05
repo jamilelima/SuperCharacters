@@ -1,9 +1,9 @@
-package dev.jamile.superheroes.features.home
+package dev.jamile.supercharacters.features.home
 
-import dev.jamile.superheroes.base.BaseViewModel
-import dev.jamile.superheroes.network.Result
-import dev.jamile.superheroes.repository.CharactersRepository
-import dev.jamile.superheroes.utils.coroutines.DispatchersProvider
+import dev.jamile.supercharacters.base.BaseViewModel
+import dev.jamile.supercharacters.network.Result
+import dev.jamile.supercharacters.repository.CharactersRepository
+import dev.jamile.supercharacters.utils.coroutines.DispatchersProvider
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,13 +17,13 @@ class HomeViewModel(
     private val _homeStateFlow = MutableStateFlow<HomeViewState>(HomeViewState.Loading)
     val homeStateFlow = _homeStateFlow.asStateFlow()
 
-    fun getSuperHeroes() {
+    fun getSuperCharacters() {
         val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
             onError(exception)
         }
 
         scope.launch(dispatchersProvider.main + coroutineExceptionHandler) {
-            when (val response = repository.getHeroes(10)) {
+            when (val response = repository.getCharacters(10)) {
                 is Result.Success -> {
                     _homeStateFlow.emit(
                         HomeViewState.Success(response.data.results)

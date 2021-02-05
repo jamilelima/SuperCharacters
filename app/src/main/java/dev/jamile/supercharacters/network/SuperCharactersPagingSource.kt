@@ -6,13 +6,13 @@ import dev.jamile.supercharacters.datasource.models.Character
 import retrofit2.HttpException
 import java.io.IOException
 
-class SuperHeroesPagingSource(private val service: ApiService, private val query: String) : PagingSource<Int, Character>() {
+class SuperCharactersPagingSource(private val service: ApiService, private val query: String) : PagingSource<Int, Character>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         val position = params.key ?: START_INDEX
         return try {
-            val heroesList = service.getCharacters(position).body()?.results
+            val characterList = service.getCharacters(position).body()?.results
             val emptyList = emptyList<Character>()
-            val data = heroesList ?: emptyList
+            val data = characterList ?: emptyList
             LoadResult.Page(
                 data = data,
                 prevKey = if (position == START_INDEX) null else position - 1,

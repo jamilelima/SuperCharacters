@@ -1,7 +1,7 @@
-package dev.jamile.superheroes.di
+package dev.jamile.supercharacters.di
 
-import dev.jamile.superheroes.repository.CharactersRepository
-import dev.jamile.superheroes.repository.CharactersRepositoryImpl
+import dev.jamile.supercharacters.repository.CharactersRepository
+import dev.jamile.supercharacters.repository.CharactersRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {

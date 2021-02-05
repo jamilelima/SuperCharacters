@@ -1,4 +1,4 @@
-package dev.jamile.superheroes.datasource.models
+package dev.jamile.supercharacters.datasource.models
 
 import com.google.gson.annotations.SerializedName
 
