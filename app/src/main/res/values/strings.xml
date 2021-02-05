@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">SuperHeroes</string>
+    <string name="app_name">SuperCharacters</string>
     <string name="default_error_snack">Ops! Ocorreu um erro.</string>
 </resources>

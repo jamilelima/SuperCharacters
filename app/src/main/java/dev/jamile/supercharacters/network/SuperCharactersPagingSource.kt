@@ -1,11 +1,10 @@
-package dev.jamile.superheroes.network
+package dev.jamile.supercharacters.network
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import dev.jamile.superheroes.datasource.models.Character
+import dev.jamile.supercharacters.datasource.models.Character
 import retrofit2.HttpException
 import java.io.IOException
-import java.lang.Exception
 
 class SuperHeroesPagingSource(private val service: ApiService, private val query: String) : PagingSource<Int, Character>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {

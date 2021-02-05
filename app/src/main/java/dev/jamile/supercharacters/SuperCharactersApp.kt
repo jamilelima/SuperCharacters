@@ -1,14 +1,14 @@
-package dev.jamile.superheroes
+package dev.jamile.supercharacters
 
 import android.app.Application
 import android.content.Context
-import dev.jamile.superheroes.di.networkModule
-import dev.jamile.superheroes.di.repositoryModule
-import dev.jamile.superheroes.di.viewModelModule
+import dev.jamile.supercharacters.di.networkModule
+import dev.jamile.supercharacters.di.repositoryModule
+import dev.jamile.supercharacters.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class SuperHeroesApp : Application() {
+class SuperCharactersApp : Application() {
 
     override fun onCreate() {
         super.onCreate()

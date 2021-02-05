@@ -1,5 +1,5 @@
 object AppConfig {
-    const val applicationId = "dev.jamile.superheroes"
+    const val applicationId = "dev.jamile.supercharacters"
     const val versionName = "1.0.0"
     const val buildToolsVersion = "30.0.3"
 }

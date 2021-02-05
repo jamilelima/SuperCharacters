@@ -1,4 +1,4 @@
-package dev.jamile.superheroes.utils
+package dev.jamile.supercharacters.utils
 
 // https://comicvine.gamespot.com/api/issues/?api_key=d25ef8a94b16db3b1f2cd555b1432b5deeabca46&format=json
 

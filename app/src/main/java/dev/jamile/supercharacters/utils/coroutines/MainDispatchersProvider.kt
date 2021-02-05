@@ -1,4 +1,4 @@
-package dev.jamile.superheroes.utils.coroutines
+package dev.jamile.supercharacters.utils.coroutines
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers.IO
