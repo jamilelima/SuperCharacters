@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.jamile.supercharacters.R
@@ -53,7 +54,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         when (homeViewState) {
             is Loading -> showLoading()
             is Success -> showCharacters(homeViewState.data)
-            is NetworkError -> showError()
+            is NetworkError -> showError(homeViewState.message)
         }
     }
 
@@ -64,6 +65,8 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     private fun showCharacters(charactersList: List<Character>) {
         binding.apply {
             progressBar.visibility = View.GONE
+            noDataImg.visibility = View.GONE
+            noDataDesc.visibility = View.GONE
             homeRecyclerView?.apply {
                 visibility = View.VISIBLE
                 layoutManager = LinearLayoutManager(requireContext())
@@ -72,8 +75,18 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         }
     }
 
-    private fun showError() {
+    private fun showError(errorMessage: String?) {
+        binding.apply {
+            progressBar.visibility = View.GONE
+            noDataImg.visibility = View.VISIBLE
+            noDataDesc.visibility = View.VISIBLE
+        }
 
+        Toast.makeText(
+            requireContext(),
+            errorMessage ?: "Ops! We have a problem here.",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
 }

@@ -31,7 +31,7 @@ class HomeViewModel(
                 }
                 is Result.Failure -> {
                     _homeStateFlow.emit(
-                        HomeViewState.NetworkError("")
+                        HomeViewState.NetworkError("Ops! We have a problem here. Try again later!")
                     )
                 }
             }
