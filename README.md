@@ -25,4 +25,4 @@ Feel free to open an [issue](https://github.com/jamilelima/SuperCharacters/issue
 
 # :books: License
 
-Made with :coffee: by [Jamile](https://github.com/jamilelima) 💜🚀
+Made with :coffee: by [Jamile](https://github.com/jamilelima)
