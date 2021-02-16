@@ -1,8 +1,24 @@
 package dev.jamile.supercharacters.repository
 
-import dev.jamile.supercharacters.datasource.models.CharactersResponse
-import dev.jamile.supercharacters.network.Result
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import dev.jamile.supercharacters.datasource.models.Character
+import dev.jamile.supercharacters.network.SuperCharactersPagingSource
+import kotlinx.coroutines.flow.Flow
 
-interface CharactersRepository {
-    suspend fun getCharacters(limit: Int): Result<CharactersResponse>
+class CharactersRepository(private val charactersPagingSource: SuperCharactersPagingSource) {
+    fun getCharacters(): Flow<PagingData<Character>> {
+        return Pager(
+            config = PagingConfig(
+                pageSize = PAGE_SIZE,
+                enablePlaceholders = true
+            ),
+            pagingSourceFactory = { charactersPagingSource }
+        ).flow
+    }
+
+    companion object {
+        const val PAGE_SIZE = 20
+    }
 }

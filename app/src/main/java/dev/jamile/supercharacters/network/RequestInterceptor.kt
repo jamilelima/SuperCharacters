@@ -1,5 +1,6 @@
 package dev.jamile.supercharacters.network
 
+import dev.jamile.supercharacters.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
@@ -15,7 +16,16 @@ object RequestInterceptor {
         val okHttp = OkHttpClient.Builder()
         okHttp.addInterceptor(logger())
         okHttp.addInterceptor { chain ->
-            return@addInterceptor chain.proceed(chain.request())
+            val request = chain.request()
+
+            val newUrl = request.url.newBuilder()
+                .addQueryParameter("api_key", BuildConfig.API_KEY)
+                .addQueryParameter("format", "json")
+                .build()
+
+            val newRequest = request.newBuilder().url(newUrl).build()
+
+            return@addInterceptor chain.proceed(newRequest)
         }
         return okHttp
     }

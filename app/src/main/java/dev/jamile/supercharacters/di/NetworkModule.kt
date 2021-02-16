@@ -18,5 +18,5 @@ val networkModule = module {
 
     }
     single { get<Retrofit>().create(ApiService::class.java) }
-    factory { SuperCharactersPagingSource(get(), get()) }
+    factory { SuperCharactersPagingSource(get()) }
 }
