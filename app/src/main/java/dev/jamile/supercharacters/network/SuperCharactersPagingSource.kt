@@ -6,17 +6,17 @@ import dev.jamile.supercharacters.datasource.models.Character
 import retrofit2.HttpException
 import java.io.IOException
 
-class SuperCharactersPagingSource(private val service: ApiService, private val query: String) : PagingSource<Int, Character>() {
+class SuperCharactersPagingSource(private val service: ApiService) : PagingSource<Int, Character>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         val position = params.key ?: START_INDEX
         return try {
-            val characterList = service.getCharacters(position).body()?.results
+            val characterList = service.getCharacters(position, LIMIT).body()?.results
             val emptyList = emptyList<Character>()
             val data = characterList ?: emptyList
             LoadResult.Page(
                 data = data,
-                prevKey = if (position == START_INDEX) null else position - 1,
-                nextKey = if (data.isEmpty()) null else position + 1
+                prevKey = if (position == START_INDEX) null else position - 20,
+                nextKey = if (data.isEmpty()) null else position + 20
             )
         } catch (exception: IOException) {
             LoadResult.Error(exception)
@@ -30,6 +30,7 @@ class SuperCharactersPagingSource(private val service: ApiService, private val q
     }
 
     companion object {
-        const val START_INDEX = 1
+        const val START_INDEX = 20
+        const val LIMIT = 10
     }
 }

@@ -2,4 +2,5 @@
     <string name="app_name">SuperCharacters</string>
     <string name="default_error_snack">Ops! Ocorreu um erro.</string>
     <string name="sorry_about_that">Sorry about that :(</string>
+    <string name="ops">Ops...</string>
 </resources>
