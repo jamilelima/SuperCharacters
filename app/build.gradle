@@ -4,9 +4,13 @@ plugins {
 }
 
 // Read credentials
-def credentials = rootProject.file("local.properties")
 def credentialProperty = new Properties()
-credentialProperty.load(new FileInputStream(credentials))
+if (rootProject.file("local.properties").exists()) {
+    def credentials = rootProject.file("local.properties")
+    credentialProperty.load(new FileInputStream(credentials))
+} else {
+    credentialProperty.load(new FileInputStream(""))
+}
 
 android {
     compileSdkVersion AndroidSdk.compile
