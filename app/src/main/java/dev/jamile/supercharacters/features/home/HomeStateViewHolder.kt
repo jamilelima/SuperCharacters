@@ -11,14 +11,10 @@ class HomeStateViewHolder(
     private val binding: FailureLayoutBinding,
     retry: () -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
-
-    init {
-        binding.tryAgainBtn.setOnClickListener { retry.invoke() }
-    }
-
+    
     fun bind(loadState: LoadState) {
         if (loadState is LoadState.Error) {
-            binding.noInternetMsg.text = loadState.error.localizedMessage
+            // TODO: setup error here
         }
         binding.progressbar.isVisible = loadState is LoadState.Loading
     }

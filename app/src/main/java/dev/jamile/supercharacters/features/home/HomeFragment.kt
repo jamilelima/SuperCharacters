@@ -61,7 +61,6 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
                     binding.homeRecyclerView.isVisible = true
                 }
                 is LoadState.Loading -> {
-                    binding.progressBar.isVisible = true
                     binding.noDataDesc.isVisible = false
                     binding.noDataImg.isVisible = false
                 }
