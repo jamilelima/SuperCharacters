@@ -22,7 +22,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/cap" />
+            tools:src="@drawable/comic_vine_logo" />
 
         <TextView
             android:id="@+id/characterNameTextView"

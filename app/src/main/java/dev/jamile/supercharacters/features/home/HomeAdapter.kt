@@ -36,8 +36,8 @@ class HomeAdapter(diffCallback: DiffUtil.ItemCallback<Character>) :
             if (character != null) {
                 binding.apply {
                     Glide.with(context)
-                        .load(character.image["thumb_url"])
-                        .placeholder(R.drawable.cap)
+                        .load(character.image["medium_url"])
+                        .placeholder(R.drawable.comic_vine_logo)
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(characterImage)
                     characterNameTextView.text = character.name
