@@ -15,8 +15,8 @@ class SuperCharactersPagingSource(private val service: ApiService) : PagingSourc
             val data = characterList ?: emptyList
             LoadResult.Page(
                 data = data,
-                prevKey = if (position == START_INDEX) null else position - 20,
-                nextKey = if (data.isEmpty()) null else position + 20
+                prevKey = if (position == START_INDEX) null else position - 10,
+                nextKey = if (data.isEmpty()) null else position + 10
             )
         } catch (exception: IOException) {
             LoadResult.Error(exception)
@@ -30,7 +30,7 @@ class SuperCharactersPagingSource(private val service: ApiService) : PagingSourc
     }
 
     companion object {
-        const val START_INDEX = 20
+        const val START_INDEX = 10
         const val LIMIT = 10
     }
 }
